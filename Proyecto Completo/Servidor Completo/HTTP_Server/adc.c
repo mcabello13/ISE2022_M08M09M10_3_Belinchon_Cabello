@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------
- * Name:    ADC_MCB1700.c xxxxx
+ * Name:    ADC_MCB1700.c xxxxxYYYYY
  * Purpose: A/D Converter interface for MCB1700 evaluation board
  * Rev.:    1.00
  *----------------------------------------------------------------------------*/
