@@ -53,19 +53,19 @@
 //   <i>It is a Broadcast IP address.
 //     <o>Address byte 1 <0-255>
 //     <i>Default: 192
-#define ETH0_IP1                169
+#define ETH0_IP1                10
 
 //     <o>Address byte 2 <0-255>
 //     <i>Default: 168
-#define ETH0_IP2                254
+#define ETH0_IP2                48
 
 //     <o>Address byte 3 <0-255>
 //     <i>Default: 0
-#define ETH0_IP3                86
+#define ETH0_IP3                11
 
 //     <o>Address byte 4 <0-255>
 //     <i>Default: 100
-#define ETH0_IP4                47
+#define ETH0_IP4                103
 //   </h>
 
 //   <h>Subnet mask
@@ -76,7 +76,7 @@
 
 //     <o>Mask byte 2 <0-255>
 //     <i>Default: 255
-#define ETH0_MASK2              255
+#define ETH0_MASK2              254
 
 //     <o>Mask byte 3 <0-255>
 //     <i>Default: 255

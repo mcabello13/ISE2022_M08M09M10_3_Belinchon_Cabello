@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Output\HTTP_Server.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Output\HTTP_Server.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Mar 14 18:48:55 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Mar 15 17:35:57 2022
 <BR><P>
 <H3>Maximum Stack Usage =        328 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -237,19 +237,19 @@ Global Symbols
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_GetFullAlarmTime
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetFullAlarmTime
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetFullTime
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetTime
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_DeInit
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetAlarmTime
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_DeInit
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetTime
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetAlarmTime
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_ResetClockTickCounter
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Init
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_GetTime
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_GetIntPending
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_GetFullTime
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_CntIncrIntConfig
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_GetFullTime
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_CntIncrIntConfig
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Cmd
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_ClearIntPending
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_CalibCounterCmd
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_AlarmIntConfig
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_AlarmIntConfig
 </UL>
 
 <P><STRONG><a name="[4a]"></a>os_idle_demon</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, rtx_conf_cm.o(.text))
@@ -774,7 +774,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> thread.o(.constdata)
 </UL>
-<P><STRONG><a name="[4f]"></a>ThreadLED4</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, thread.o(.text))
+<P><STRONG><a name="[4f]"></a>ThreadLED4</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, thread.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinWrite
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
@@ -802,17 +802,18 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx_1.o(RESET)
 </UL>
-<P><STRONG><a name="[9b]"></a>c_entry</STRONG> (Thumb, 112 bytes, Stack size 48 bytes, rtc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = c_entry &rArr; RTC_SetAlarmTime
+<P><STRONG><a name="[9b]"></a>c_entry</STRONG> (Thumb, 174 bytes, Stack size 48 bytes, rtc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = c_entry &rArr; RTC_SetTime
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetAlarmTime
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetTime
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_SetAlarmTime
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_ResetClockTickCounter
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Init
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_GetFullTime
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_CntIncrIntConfig
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_GetFullTime
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_CntIncrIntConfig
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Cmd
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_CalibCounterCmd
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_AlarmIntConfig
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_AlarmIntConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -821,14 +822,14 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = RTC_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLKPWR_ConfigPPWR
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLKPWR_ConfigPPWR
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[d2]"></a>RTC_DeInit</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, lpc17xx_rtc.o(.text), UNUSED)
+<P><STRONG><a name="[d3]"></a>RTC_DeInit</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, lpc17xx_rtc.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLKPWR_ConfigPPWR
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLKPWR_ConfigPPWR
 </UL>
 
 <P><STRONG><a name="[ca]"></a>RTC_ResetClockTickCounter</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, lpc17xx_rtc.o(.text))
@@ -847,7 +848,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[cf]"></a>RTC_CntIncrIntConfig</STRONG> (Thumb, 250 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
+<P><STRONG><a name="[d0]"></a>RTC_CntIncrIntConfig</STRONG> (Thumb, 240 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = RTC_CntIncrIntConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -855,7 +856,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[d0]"></a>RTC_AlarmIntConfig</STRONG> (Thumb, 250 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
+<P><STRONG><a name="[d1]"></a>RTC_AlarmIntConfig</STRONG> (Thumb, 240 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = RTC_AlarmIntConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -863,11 +864,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[d3]"></a>RTC_SetTime</STRONG> (Thumb, 276 bytes, Stack size 32 bytes, lpc17xx_rtc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
+<P><STRONG><a name="[cd]"></a>RTC_SetTime</STRONG> (Thumb, 270 bytes, Stack size 32 bytes, lpc17xx_rtc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = RTC_SetTime
+</UL>
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[c5]"></a>RTC_GetTime</STRONG> (Thumb, 178 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
+<P><STRONG><a name="[c5]"></a>RTC_GetTime</STRONG> (Thumb, 170 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = RTC_GetTime
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -879,7 +884,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
 
-<P><STRONG><a name="[ce]"></a>RTC_GetFullTime</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
+<P><STRONG><a name="[cf]"></a>RTC_GetFullTime</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = RTC_GetFullTime
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -887,7 +892,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[cd]"></a>RTC_SetAlarmTime</STRONG> (Thumb, 258 bytes, Stack size 24 bytes, lpc17xx_rtc.o(.text))
+<P><STRONG><a name="[ce]"></a>RTC_SetAlarmTime</STRONG> (Thumb, 254 bytes, Stack size 24 bytes, lpc17xx_rtc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = RTC_SetAlarmTime
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -895,7 +900,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[1f0]"></a>RTC_GetAlarmTime</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, lpc17xx_rtc.o(.text), UNUSED)
+<P><STRONG><a name="[1f0]"></a>RTC_GetAlarmTime</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, lpc17xx_rtc.o(.text), UNUSED)
 
 <P><STRONG><a name="[d5]"></a>RTC_SetFullAlarmTime</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, lpc17xx_rtc.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -929,7 +934,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_entry
 </UL>
 
-<P><STRONG><a name="[d7]"></a>RTC_CalibConfig</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, lpc17xx_rtc.o(.text), UNUSED)
+<P><STRONG><a name="[d7]"></a>RTC_CalibConfig</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, lpc17xx_rtc.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
 
@@ -951,8 +956,8 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLKPWR_GetPCLKSEL
 </UL>
 
-<P><STRONG><a name="[d1]"></a>CLKPWR_ConfigPPWR</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_DeInit
+<P><STRONG><a name="[d2]"></a>CLKPWR_ConfigPPWR</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_DeInit
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Init
 </UL>
 
@@ -2250,8 +2255,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> hal_cm3.o(.emb_text)
 </UL>
 <P><STRONG><a name="[1ca]"></a>rt_free_mem</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, rt_memory.o(i.rt_free_mem))
-<BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcThreadCreate
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcThreadTerminate
+<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcThreadTerminate
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcThreadCreate
 </UL>
 
 <P><STRONG><a name="[19b]"></a>rt_get_first</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, rt_list.o(i.rt_get_first))
@@ -2598,10 +2603,10 @@ Global Symbols
 <P><STRONG><a name="[3a]"></a>svcKernelInitialize</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, rt_cmsis.o(i.svcKernelInitialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = svcKernelInitialize &rArr; svcThreadCreate &rArr; rt_tsk_create &rArr; rt_init_context &rArr; rt_init_stack
 </UL>
-<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcThreadCreate
-<LI><a href="#[1c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcMessageCreate
+<BR>[Calls]<UL><LI><a href="#[1c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcMessageCreate
 <LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_sys_init
 <LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_init_mem
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcThreadCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelInitialize
 </UL>
@@ -2951,7 +2956,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> phy_dp83848c.o(.constdata)
 </UL>
-<P><STRONG><a name="[59]"></a>GetLinkInfo</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, phy_dp83848c.o(.text))
+<P><STRONG><a name="[59]"></a>GetLinkInfo</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, phy_dp83848c.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GetLinkInfo
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> phy_dp83848c.o(.constdata)
@@ -3210,9 +3215,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ssp_lpc17xx.o(.constdata)
 </UL>
-<P><STRONG><a name="[77]"></a>SSP1_GetStatus</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, ssp_lpc17xx.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SSP1_GetStatus
-</UL>
+<P><STRONG><a name="[77]"></a>SSP1_GetStatus</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, ssp_lpc17xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> ssp_lpc17xx.o(.constdata)
 </UL>
 <P><STRONG><a name="[e8]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, ssp_lpc17xx.o(.text))
@@ -3252,10 +3255,10 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1c1]"></a>rt_ms2tick</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, rt_cmsis.o(i.rt_ms2tick))
-<BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcSignalWait
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcMutexWait
+<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcMutexWait
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcMessageGet
 <LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcDelay
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcSignalWait
 </UL>
 
 <P><STRONG><a name="[182]"></a>rt_tid2ptcb</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.rt_tid2ptcb))

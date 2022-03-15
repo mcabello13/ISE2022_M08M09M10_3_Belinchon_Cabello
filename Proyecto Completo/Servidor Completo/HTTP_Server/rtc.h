@@ -15,4 +15,5 @@
 extern void c_entry(void);
 extern void RTC_getTime_Date(void);
 extern int Init_Thread(void);
+extern void RTC_IRQHandler(void);
    

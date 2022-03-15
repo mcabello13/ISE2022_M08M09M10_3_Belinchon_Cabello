@@ -60,15 +60,16 @@ void ThreadLCD (void const *argument)
 void ThreadLED4 (void const *argument) 
 {
 	//osEvent evento;
-	
+	int i=0;
 	while(1)
 	{
 		 osSignalWait(AlarmaLed4, osWaitForever);
-		
-		GPIO_PinWrite (PUERTO_LED, LED4, 1 ); 
-		osDelay(100);
-		GPIO_PinWrite (PUERTO_LED, LED4, 0 ); 
-		osDelay(100);
+		for(i=0;i<5;i++){
+      GPIO_PinWrite (PUERTO_LED, LED4, 1 ); 
+      osDelay(500);
+      GPIO_PinWrite (PUERTO_LED, LED4, 0 ); 
+      osDelay(500);
+    }
 	}
 }
 

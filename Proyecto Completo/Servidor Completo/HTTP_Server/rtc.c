@@ -6,6 +6,9 @@
 #include "time.h"
 
 //INFORMACION --> https://github.com/scottellis/lpc17xx.cmsis.driver.library/blob/master/Examples/RTC/Calibration/rtc_calib.c
+//L:\ING_SIS_ELE\lpc175x_6x_cmsis_driver_library\Drivers\source
+//L:\ING_SIS_ELE\lpc175x_6x_cmsis_driver_library\Drivers\include
+//L:\ING_SIS_ELE\lpc175x_6x_cmsis_driver_library\Examples\RTC
 
 //Variables:
 int segundos;
@@ -20,6 +23,7 @@ char fecha[20];
 extern osThreadId tid_ThreadLCD;    
 extern osThreadId tid_ThreadLED4;   
 extern void c_entry(void);
+extern void RTC_IRQHandler(void);
 
 //Funcion que obtiene el tiempo y fecha del RTC y lo escribe en el LCD:
 void RTC_getTime_Date(void)
@@ -95,17 +99,17 @@ void c_entry(void)
 	/* Set current time for RTC */
 	// Current time is 8:00:00PM, 2009-04-24
 	
-//	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_SECOND, 0);
-//	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_MINUTE, 0);
-//	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_HOUR, 20);
-//	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_MONTH, 4);
-//	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_YEAR, 2009);
-//	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_DAYOFMONTH, 24);
+	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_SECOND, 0);
+	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_MINUTE, 0);
+	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_HOUR, 20);
+	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_MONTH, 3);
+	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_YEAR, 2022);
+	RTC_SetTime (LPC_RTC, RTC_TIMETYPE_DAYOFMONTH, 24);
 
 //  RTC_setTime_Date();
 
 	/* Set ALARM time for second */
-	RTC_SetAlarmTime (LPC_RTC, RTC_TIMETYPE_SECOND, 0);// Alarma cada 1 min
+	RTC_SetAlarmTime (LPC_RTC, RTC_TIMETYPE_SECOND, 0);// Alarma cada 1 min. que es 0 segundos
 	//RTC_SetAlarmTime (LPC_RTC, RTC_TIMETYPE_MINUTE, 0);
 	
 
