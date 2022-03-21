@@ -16,7 +16,7 @@
  */
 #define CMSIS_device_header "LPC17xx.h"
 
-/* ARM::CMSIS:RTOS:Keil RTX:4.82.0 */
+/* ARM::CMSIS:RTOS:Keil RTX:4.81.1 */
 #define RTE_CMSIS_RTOS                  /* CMSIS-RTOS */
         #define RTE_CMSIS_RTOS_RTX              /* CMSIS-RTOS Keil RTX */
 /* Keil.MDK-Pro Net_v6::Network:CORE:Release:6.7.7 */

@@ -2,9 +2,11 @@
 #include "GPIO_LPC17xx.h"
 #include "lcd.h"
 #include "rtc.h"
+#include "sntp.h"
 
 //Variables:
 int valor = 1;
+int j=0;
 
 //Funciones:
 extern int Init_Thread(void);
@@ -18,10 +20,18 @@ void ThreadLED4 (void const *argument);
 osThreadId tid_ThreadLED4;                                          
 osThreadDef (ThreadLED4, osPriorityNormal, 1, 0); 
 
+void ThreadLED3 (void const *argument);                            
+osThreadId tid_ThreadLED3;                                          
+osThreadDef (ThreadLED3, osPriorityNormal, 1, 0); 
+
+void ThreadSNTP (void const *argument);                            
+osThreadId tid_ThreadSNTP;                                          
+osThreadDef (ThreadSNTP, osPriorityNormal, 1, 0); 
+
 //Timers:
-void parpadeoLED4 (void const *argument); //Callback
-osTimerId tid_parpLed4;
-osTimerDef (parpLed4, parpadeoLED4);   
+void obtenerTiempo (void const *argument); //Callback
+osTimerId tid_obTiempo;
+osTimerDef (obTiempo, obtenerTiempo);
 
 //Funcion que inicializa los hilos:
 int Init_Thread (void) 
@@ -32,14 +42,24 @@ int Init_Thread (void)
 	tid_ThreadLED4 = osThreadCreate (osThread(ThreadLED4), NULL);
   if (!tid_ThreadLED4) return(-1);
 	
+	tid_ThreadLED3 = osThreadCreate (osThread(ThreadLED3), NULL);
+  if (!tid_ThreadLED3) return(-1);
+	
+	tid_obTiempo = osTimerCreate (osTimer(obTiempo), osTimerPeriodic, NULL);
+  if (!tid_obTiempo) return(-1);
+	
+	tid_ThreadSNTP = osThreadCreate (osThread(ThreadSNTP), NULL);
+  if (!tid_ThreadSNTP) return(-1);
+	
+	osTimerStart(tid_obTiempo, 120000);
+	
 	return 0;
 }
 
-//Timer que gestiona el parpadeo del LED 4:
-void parpadeoLED4(void const *argument) 
+//Timer que gestiona los 3 min:
+void obtenerTiempo(void const *argument) 
 {
-  GPIO_PinWrite(PUERTO_LED, LED4, valor);
-	valor =! valor;
+	osSignalSet(tid_ThreadSNTP, lecturaHoraSNTP);
 }
 
 //Hilo que gestiona la escritura en el LCD:
@@ -51,7 +71,7 @@ void ThreadLCD (void const *argument)
 	while(1)
 	{
 		 osSignalWait(EscrituraLCD, osWaitForever);
-		
+		 
 		 RTC_getTime_Date();
 	}
 }
@@ -60,47 +80,48 @@ void ThreadLCD (void const *argument)
 void ThreadLED4 (void const *argument) 
 {
 	//osEvent evento;
-	int i=0;
+	
 	while(1)
-	{
+	{			
 		 osSignalWait(AlarmaLed4, osWaitForever);
-		for(i=0;i<5;i++){
-      GPIO_PinWrite (PUERTO_LED, LED4, 1 ); 
-      osDelay(500);
-      GPIO_PinWrite (PUERTO_LED, LED4, 0 ); 
-      osDelay(500);
-    }
+		
+		 for(j=0;j<5;j++)
+		 {
+				GPIO_PinWrite (PUERTO_LED, LED4, 1 ); 
+				osDelay(500);
+				GPIO_PinWrite (PUERTO_LED, LED4, 0 ); 
+				osDelay(500);
+	   }
 	}
 }
 
+//Hilo que gestiona el LED3:
+void ThreadLED3 (void const *argument) 
+{
+	//osEvent evento;
+	
+	while(1)
+	{			
+			osSignalWait(Led3, osWaitForever);
 
+			GPIO_PinWrite (PUERTO_LED, LED3, 1 ); 
+			osDelay(100);
+			GPIO_PinWrite (PUERTO_LED, LED3, 0 ); 
+			osDelay(100);
+	}
+}
 
+void ThreadSNTP (void const *argument) 
+{
+	//osEvent evento;
+	
+	while(1)
+	{			
+		 osSignalWait(lecturaHoraSNTP, osWaitForever);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		 get_time_SNTP();
+		 //RTC_setTime_Date();
+		
+		 osSignalSet(tid_ThreadLED3, Led3);	
+	}
+}

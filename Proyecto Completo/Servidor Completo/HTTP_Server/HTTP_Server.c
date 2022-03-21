@@ -20,8 +20,9 @@
 #include "adc.h"
 #include "adc.h"
 #include "rtc.h"
+#include "sntp.h"
 
-bool LEDrun;
+bool LEDrun = false;
 bool LCDupdate;
 char lcd_text[2][20+1];
 
@@ -154,6 +155,8 @@ int main (void) {
 	
 	c_entry();
 	Init_Thread();
+	
+	get_time_SNTP();
 	
 	osThreadCreate (osThread(BlinkLed), NULL);
   osThreadCreate (osThread(Display), NULL);

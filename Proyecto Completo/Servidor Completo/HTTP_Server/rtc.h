@@ -10,10 +10,13 @@
 //Señales:
 #define AlarmaLed4 0x001
 #define EscrituraLCD 0x002
+#define Led3 0x004
+#define esc 0x00001
+#define lecturaHoraSNTP 0x00002
 
 //Funciones:
 extern void c_entry(void);
 extern void RTC_getTime_Date(void);
 extern int Init_Thread(void);
-extern void RTC_IRQHandler(void);
+extern void RTC_setTime_Date(void);
    

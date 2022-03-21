@@ -24,19 +24,19 @@
 //   <i>NTP Server IP Address
 //     <o>Address byte 1 <0-255>
 //     <i>Default: 217
-#define SNTP_CLIENT_SERVER_IP1   217
+#define SNTP_CLIENT_SERVER_IP1   193
 
 //     <o>Address byte 2 <0-255>
 //     <i>Default: 79
-#define SNTP_CLIENT_SERVER_IP2   79
+#define SNTP_CLIENT_SERVER_IP2   145
 
 //     <o>Address byte 3 <0-255>
 //     <i>Default: 179
-#define SNTP_CLIENT_SERVER_IP3   179
+#define SNTP_CLIENT_SERVER_IP3   15
 
 //     <o>Address byte 4 <0-255>
 //     <i>Default: 106
-#define SNTP_CLIENT_SERVER_IP4   106
+#define SNTP_CLIENT_SERVER_IP4   15
 //   </h>
 
 // </h>
