@@ -1,0 +1,7 @@
+t <form>
+t <text>
+t <id>ad_hora</id>
+c x<value>%.2d:%.2d:%.2d</value>
+t </text>
+t </form>
+.
