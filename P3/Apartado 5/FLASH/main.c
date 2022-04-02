@@ -37,7 +37,7 @@
 
 /** The area will be erase and program */
 #define FLASH_PROG_AREA_START       0x8000  //Sector 8, 4 kB, 8000-7FFF
-#define FLASH_PROG_AREA_SIZE		0x1000 // tamano area 1000
+#define FLASH_PROG_AREA_SIZE		0x1000 //Tamaño area --> 1000
 
 /** The origin buffer on RAM */
 #define BUFF_SIZE           1024
@@ -95,11 +95,8 @@ void c_entry (void)
 	
 	status = EraseSector(flash_prog_area_sec_start, flash_prog_area_sec_end); //Borrado del Sector de la Flash.
 	
-	//for (i=0; i<FLASH_PROG_AREA_SIZE; i++ ) // --> --> --> PREGUNTAR DUDA DE COMO COPIA!!!!!!!!
-	//{
-		ptr = (uint8_t*)(FLASH_PROG_AREA_START /*+ i*BUFF_SIZE*/); //Se coloca el puntero en el comienzo del Sector (en este ejemplo el Sector 8 --> 8000-7FFF)...
-		status = CopyRAM2Flash(ptr, buffer, IAP_WRITE_1024); //...y se realiza la copia a la Flash. Parametros: puntero indicando el destino, los datos a copiar y el tamaño de la Flash.
-	//}
+	ptr = (uint8_t*)(FLASH_PROG_AREA_START); //Se coloca el puntero en el comienzo del Sector (en este ejemplo el Sector 8 --> 8000-7FFF)...
+	status = CopyRAM2Flash(ptr, buffer, IAP_WRITE_1024); //...y se realiza la copia a la Flash. Parametros: puntero indicando el destino, los datos a copiar y el tamaño de la Flash.
 
 	//2- Se guarda el contenido copiado en la Flash en otro array:
 	for(i=0; i<16; i++)

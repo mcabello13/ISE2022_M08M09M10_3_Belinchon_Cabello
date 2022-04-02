@@ -1,6 +1,6 @@
 Dependencies for Project 'WATCHDOG', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.c)(0x62403C84)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\Castellana\Documents\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Castellana\Documents\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Users\Castellana\Documents\Keil\LPC1700_DFP\2.5.0\RTE_Driver-D__UVISION_VERSION="535" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x62486712)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\Castellana\Documents\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Castellana\Documents\Keil\LPC1700_DFP\2.5.0\Device\Include-IC:\Users\Castellana\Documents\Keil\LPC1700_DFP\2.5.0\RTE_Driver-D__UVISION_VERSION="535" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Users\Castellana\Documents\Keil\LPC1700_DFP\2.5.0\RTE_Driver\GPIO_LPC17xx.h)(0x558299FA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x602577DE)
 I (C:\Users\Castellana\Documents\Keil\LPC1700_DFP\2.5.0\RTE_Driver\PIN_LPC17xx.h)(0x558299FA)

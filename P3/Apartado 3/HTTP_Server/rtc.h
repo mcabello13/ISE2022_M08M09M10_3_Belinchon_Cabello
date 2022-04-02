@@ -15,10 +15,19 @@
 #define senalCenR	0x010
 #define senalCenF	0x020
 
+//Variables:
+extern int segundos;
+extern int minutos;
+extern int horas;
+extern int dia;
+extern int mes;
+extern int ano;
+extern char cadenaReloj [20+1];
+extern char cadenaFecha [20+1];
+
 //Funciones:
 extern void c_entry(void);
 extern void RTC_getTime_Date(void);
 extern int Init_Thread(void);
 extern void RTC_setTime_Date(void);
 extern void RTC_JOY(void);   
-extern struct tm devuelveTiempo(void);

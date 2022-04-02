@@ -618,21 +618,6 @@
               <FileType>9</FileType>
               <FilePath>.\Web\pabb.gif</FilePath>
             </File>
-            <File>
-              <FileName>hora.cgi</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\Web\hora.cgi</FilePath>
-            </File>
-            <File>
-              <FileName>fecha.cgx</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\Web\fecha.cgx</FilePath>
-            </File>
-            <File>
-              <FileName>hora.cgx</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\Web\hora.cgx</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -1273,21 +1258,6 @@
               <FileName>pabb.gif</FileName>
               <FileType>9</FileType>
               <FilePath>.\Web\pabb.gif</FilePath>
-            </File>
-            <File>
-              <FileName>hora.cgi</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\Web\hora.cgi</FilePath>
-            </File>
-            <File>
-              <FileName>fecha.cgx</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\Web\fecha.cgx</FilePath>
-            </File>
-            <File>
-              <FileName>hora.cgx</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\Web\hora.cgx</FilePath>
             </File>
           </Files>
         </Group>

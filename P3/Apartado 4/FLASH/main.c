@@ -37,7 +37,7 @@
 
 /** The area will be erase and program */
 #define FLASH_PROG_AREA_START       0x8000  //Sector 8, 4 kB, 8000-7FFF
-#define FLASH_PROG_AREA_SIZE		0x1000 // tamano area 1000
+#define FLASH_PROG_AREA_SIZE		0x1000 //Tamaño de area --> 1000
 
 /** The origin buffer on RAM */
 #define BUFF_SIZE           1024

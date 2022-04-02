@@ -42,7 +42,7 @@ void EINT3_IRQHandler (void)
 			 {
 					estado = ~estado;
 					GPIO_PinWrite(PUERTO_LED,LED_4, estado);
-					//LPC_GPIOINT->IO0IntClr |= 1<<SW_DOWN;   
+					//LPC_GPIOINT->IO0IntClr |= 1<<SW_DOWN; --> ERROR  
 				  cuenta++;
 			 }
 			 LPC_GPIOINT->IO0IntClr |= 1<<SW_DOWN; //El Watchdog saltaba debido a que el flag de la interrupcion se estaba limpiando dentro del bucle "if"...

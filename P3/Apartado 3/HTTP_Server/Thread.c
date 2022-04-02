@@ -1,3 +1,9 @@
+/****************************
+ *Alumnos:                  *
+ * Eduardo Belinchon Vera.  *
+ * Miguel Cabello Adrada.   *
+ ****************************/
+ 
 #include "cmsis_os.h"                                          
 #include "GPIO_LPC17xx.h"
 #include "lcd.h"
@@ -76,10 +82,7 @@ void obtenerTiempo(void const *argument)
 
 //Hilo que gestiona la escritura en el LCD:
 void ThreadLCD (void const *argument) 
-{
-	
-	//osEvent evento;
-	
+{	
 	while(1)
 	{
 		 osSignalWait(EscrituraLCD, osWaitForever);
@@ -90,14 +93,12 @@ void ThreadLCD (void const *argument)
 
 //Hilo que gestiona el LED4:
 void ThreadLED4 (void const *argument) 
-{
-	//osEvent evento;
-	
+{	
 	while(1)
 	{			
 		 osSignalWait(AlarmaLed4, osWaitForever);
 		
-		 for(j=0;j<5;j++)
+		 for(j=0;j<5;j++) //Parpadeo de cinco segundos.
 		 {
 				GPIO_PinWrite (PUERTO_LED, LED4, 1 ); 
 				osDelay(500);
@@ -109,9 +110,7 @@ void ThreadLED4 (void const *argument)
 
 //Hilo que gestiona el LED3:
 void ThreadLED3 (void const *argument) 
-{
-	//osEvent evento;
-	
+{	
 	while(1)
 	{			
 			osSignalWait(Led3, osWaitForever);
@@ -125,16 +124,13 @@ void ThreadLED3 (void const *argument)
 
 //Hilo que gestiona la actualizacion del tiempo:
 void ThreadSNTP (void const *argument) 
-{
-	//osEvent evento;
-	
+{	
 	while(1)
 	{			
 		osSignalWait(lecturaHoraSNTP, osWaitForever);
 		
 		get_time_SNTP();
-		RTC_setTime_Date();
-	
+			
 		osSignalSet(tid_ThreadLED3, Led3);	
 	}
 }

@@ -32,13 +32,14 @@
 #define PULLDOWN ((uint32_t)(3))
 #define NORMAL ((uint32_t)(0))
 
+//Variables:
 bool LEDrun = false;
 bool LCDupdate;
 char lcd_text[2][20+1];
 char lcd_buf[20+1]; 
 int i;
-struct tm tiem;
 
+//Hilos:
 extern osThreadId tid_ThreadPulsador; 
 
 static void BlinkLed (void const *arg);
@@ -60,16 +61,6 @@ osThreadDef(Display, osPriorityNormal, 1, 0);
 * En el archivo adc.c debemos modificar la funcion ADC_Initialize_lpc1768 con el puerto y el pin correspondientes								*
 * al POT 1, Recordar --> DIP 19 --> P1.30 --> Registro AD0.4 correspondiente al POT 1 (ESQUEMATICO)															*
 *********************************************************************************************************************************/
-
-void guardaT(void)
-{
-	tiem = devuelveTiempo();
-}
-
-struct tm devT(void)
-{
-	return tiem;
-}
 
 /// Read analog inputs (POTENCIOMETRO 1)
 uint16_t AD_in (uint32_t ch) {
@@ -146,7 +137,8 @@ static void BlinkLed (void const *arg) {
 	const uint8_t led_val[6] = { 0x01,0x02,0x04,0x08,0x04,0x02}; //SE HA MODIFICADO led_val CON LOS VALORES ADECUADOS PARA LOS LED.
   int cnt = 0;
 
-  LEDrun = false;
+  LEDrun = false; //Inicialmente en "false" para que no realice el barrido nada mas cargar la aplicacion.
+	
   while(1) {
     // Every 100 ms
     if (LEDrun == true) {
@@ -200,8 +192,6 @@ int main (void) {
 
 	c_entry();
 	Init_Thread();
-	
-	//get_time_SNTP();
 	
 	osThreadCreate (osThread(BlinkLed), NULL);
   osThreadCreate (osThread(Display), NULL);

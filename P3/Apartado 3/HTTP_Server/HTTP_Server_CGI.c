@@ -1,3 +1,9 @@
+/****************************
+ *Alumnos:                  *
+ * Eduardo Belinchon Vera.  *
+ * Miguel Cabello Adrada.   *
+ ****************************/
+
 /*------------------------------------------------------------------------------
  * MDK Middleware - Component ::Network:Service
  * Copyright (c) 2004-2014 ARM Germany GmbH. All rights reserved.
@@ -17,10 +23,6 @@
 // http_server.c
 extern uint16_t AD_in (uint32_t ch);
 extern uint8_t  get_button (void);
-extern void guardaT(void);
-extern struct tm devT(void);
-
-char cadena [8];
 
 // net_sys.c
 extern  LOCALM localm[];
@@ -40,6 +42,9 @@ extern char lcd_text[2][20+1];
 
 // Local variables.
 static uint8_t P2;
+
+extern char cadenaReloj [20+1];
+extern char cadenaFecha [20+1];
 
 // My structure of CGI status variable.
 typedef struct {
@@ -303,16 +308,33 @@ uint32_t cgi_script (const char *env, char *buf, uint32_t buflen, uint32_t *pcgi
       }
       break;
 
-		case 'm': //SNTP
+		case 'm': //Se añade un nuevo caso para mostrar la hora y la fecha con SNTP.
 			
-			guardaT();
-			sprintf(cadena,"%.2d:%.2d:%.2d", devT().tm_hour, devT().tm_min, devT().tm_sec);		
-      break;
+			/******************************************************************************************************
+			 * EXPLICACION: se utilizan para la nueva pagina los archivos "buttons.cgi y buttons.cgx". En este    *
+		   * ultimo se declaran dos variables periodicas para poderlas utilizar en el "buttons.cgi". En este 		*
+			 * otro archivo se realiza el diseño de la pagina junto a dos funciones: "periodicUpdateRTC()" que 		*
+		   * actualiza la hora y la fecha, y "plotRTCGraph()" que declara las dos variables a utizar en las 		*
+			 * lineas:																																														*
+			 *       c m 1 <td><input type=text readonly id="hora" size=20 maxlength=20 ></td></tr>								*
+			 *       c m 2 <td><input type=text readonly id="fecha" size=20 maxlength=20></td></tr>								*
+			 ******************************************************************************************************/
 		
-		/*case 't': //SNTP con cgx de fecha y hora
-			
-			tiempo = devuelveTiempo();			
-      break;*/
+			switch (env[2])
+			{
+				case 1:
+					
+					len = sprintf(buf, &env[4], cadenaReloj); //Las cadenas con la hora y la fecha se componen en la funcion "RTC_getTime_Date" del RTC.
+																									
+					break;
+				
+				case 2:	
+					
+					len = sprintf(buf, &env[4], cadenaFecha);
+					
+					break;
+			}					
+      break;
 			
     case 'x':
       // AD Input from 'ad.cgx'

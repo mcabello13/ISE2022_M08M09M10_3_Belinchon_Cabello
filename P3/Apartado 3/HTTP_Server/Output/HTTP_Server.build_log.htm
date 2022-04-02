@@ -21,8 +21,8 @@ Target DLL:      CMSIS_AGDI.dll V1.33.0.0
 Dialog DLL:      TARMP1.DLL V1.26.0.0
  
 <h2>Project:</h2>
-C:\Users\Castellana\Documents\Universidad\ISE\P3\Apartado 3\HTTP_Server\HTTP_Server.uvprojx
-Project File Date:  03/27/2022
+C:\Users\Castellana\Documents\Universidad\ISE\HTTP_Server\HTTP_Server.uvprojx
+Project File Date:  04/02/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
@@ -47,35 +47,32 @@ home.png,
 keil.gif,
 llblue.jpg,
 logo.gif,
-pabb.gif,
-hora.cgi,
-fecha.cgx,
-hora.cgx 
+pabb.gif 
 TO Web.c RTE NOPRINT ROOT(Web)
 custom translating @.\Auto_FcArm_Cmd.inp...
 Custom: C:\Keil_v5\ARM\Bin\FCARM.exe @.\Auto_FcArm_Cmd.inp
 FCARM FILE CONVERTER V2.58
-Completed 22 File(s), Ratio 85%
+Completed 19 File(s), Ratio 85%
 Note: source file 'RTE\Device\LPC1768\startup_LPC17xx.s' - object file renamed from '.\Output\startup_LPC17xx.o' to '.\Output\startup_lpc17xx_1.o'.
 Note: source file 'RTE\Device\LPC1768\system_LPC17xx.c' - object file renamed from '.\Output\system_LPC17xx.o' to '.\Output\system_lpc17xx_1.o'.
 compiling lpc17xx_libcfg_default.c...
-compiling leds1768.c...
 compiling Web.c...
-compiling adc.c...
+compiling leds1768.c...
 compiling HTTP_Server_CGI.c...
 compiling HTTP_Server.c...
-HTTP_Server.c(90): warning:  #940-D: missing return statement at end of non-void function "get_button" 
+HTTP_Server.c(81): warning:  #940-D: missing return statement at end of non-void function "get_button" 
   }
 HTTP_Server.c: 1 warning, 0 errors
-compiling Thread.c...
+compiling adc.c...
 compiling lpc17xx_clkpwr.c...
-compiling rtc.c...
-rtc.c(80): warning:  #223-D: function "sprintf" declared implicitly
-  	sprintf(tiempo,"%.2d:%.2d:%.2d", horas, minutos, segundos);
-rtc.c: 1 warning, 0 errors
-compiling LED_MCB1700.c...
-compiling RTX_Conf_CM.c...
+compiling Thread.c...
 compiling lcd.c...
+compiling RTX_Conf_CM.c...
+compiling LED_MCB1700.c...
+compiling rtc.c...
+rtc.c(56): warning:  #223-D: function "sprintf" declared implicitly
+  	sprintf(cadenaReloj,"%.2d:%.2d:%.2d", horas, minutos, segundos); //Estas dos cadenas son para la pagina del servidor.		
+rtc.c: 1 warning, 0 errors
 compiling lpc17xx_pinsel.c...
 compiling PHY_DP83848C.c...
 compiling sntp.c...
@@ -90,7 +87,7 @@ compiling system_LPC17xx.c...
 compiling EMAC_LPC17xx.c...
 compiling SSP_LPC17xx.c...
 linking...
-Program Size: Code=43908 RO-data=33492 RW-data=264 ZI-data=29640  
+Program Size: Code=43780 RO-data=32380 RW-data=256 ZI-data=29552  
 ".\Output\HTTP_Server.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -167,26 +164,26 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.2.0
 
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.81.1
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
-      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
-      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
-      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
       Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
       Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
 
    * Component: Keil.MCB1700::Board Support:LED:1.0.0
       Source file:   Boards\Keil\MCB1700\Common\LED_MCB1700.c
 
    * Component: Keil.MDK-Pro Net_v6::Network:CORE:Release:6.7.7
-      Include file:  Network_v6\Include\rl_net.h
       Source file:   Network_v6\Config\Net_Config.c
+      Include file:  Network_v6\Include\rl_net.h
       Library file:  Network_v6\Lib\ARM\Net_CM3_L.lib
 
    * Component: Keil.MDK-Pro Net_v6::Network:Interface:ETH:6.7.7
@@ -196,16 +193,16 @@ Package Vendor: Keil
       Include file:  Network_v6\Config\Net_Config_SNTP_Client.h
 
    * Component: Keil.MDK-Pro Net_v6::Network:Service:Web Server Compact:6.7.7
-      Source file:   Network_v6\Template\HTTP_Server_Access.c
-      Include file:  Network_v6\Config\Net_Config_HTTP_Server.h
       Source file:   Network_v6\Template\HTTP_Server_Error.c
       Source file:   Network_v6\Template\HTTP_Server_CGI.c
       Source file:   Network_v6\Template\HTTP_Server_Multiuser.c
+      Source file:   Network_v6\Template\HTTP_Server_Access.c
+      Include file:  Network_v6\Config\Net_Config_HTTP_Server.h
 
    * Component: Keil.MDK-Pro Net_v6::Network:Socket:TCP:6.7.7
-      Source file:   Network_v6\Template\TCP_Socket_Client.c
-      Include file:  Network_v6\Config\Net_Config_TCP.h
       Source file:   Network_v6\Template\TCP_Socket_Server.c
+      Include file:  Network_v6\Config\Net_Config_TCP.h
+      Source file:   Network_v6\Template\TCP_Socket_Client.c
 
    * Component: Keil.MDK-Pro Net_v6::Network:Socket:UDP:6.7.7
       Include file:  Network_v6\Config\Net_Config_UDP.h
@@ -221,8 +218,8 @@ Package Vendor: Keil
       Source file:   RTE_Driver\SSP_LPC17xx.c
 
    * Component: Keil::Device:GPDMA:1.2.0
-      Include file:  RTE_Driver\GPDMA_LPC17xx.h
       Source file:   RTE_Driver\GPDMA_LPC17xx.c
+      Include file:  RTE_Driver\GPDMA_LPC17xx.h
 
    * Component: Keil::Device:GPIO:1.1.0
       Source file:   RTE_Driver\GPIO_LPC17xx.c
@@ -233,11 +230,11 @@ Package Vendor: Keil
       Include file:  RTE_Driver\PIN_LPC17xx.h
 
    * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_LPC17xx.s
       Include file:  Device\Include\LPC17xx.h
       Source file:   Device\Source\system_LPC17xx.c
-      Source file:   Device\Source\ARM\startup_LPC17xx.s
       Include file:  RTE_Driver\Config\RTE_Device.h
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

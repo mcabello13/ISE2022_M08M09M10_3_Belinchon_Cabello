@@ -14,7 +14,7 @@
 ".\output\lpc17xx_pinsel.o"
 ".\output\lpc17xx_wdt.o"
 ".\output\led_mcb1700.o"
-"..\..\..\..\..\ARM\CMSIS\5.5.1\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib"
+"..\..\..\ARM\CMSIS\5.5.1\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib"
 ".\output\rtx_conf_cm.o"
 ".\output\phy_dp83848c.o"
 ".\output\emac_lpc17xx.o"
@@ -24,7 +24,7 @@
 ".\output\pin_lpc17xx.o"
 ".\output\startup_lpc17xx_1.o"
 ".\output\system_lpc17xx_1.o"
-"..\..\..\..\..\Keil\MDK-Middleware\7.13.0\Network_v6\Lib\ARM\Net_CM3_L.lib"
+"..\..\..\Keil\MDK-Middleware\7.13.0\Network_v6\Lib\ARM\Net_CM3_L.lib"
 ".\output\net_config.o"
 --library_type=microlib --strict --scatter ".\Output\HTTP_Server.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

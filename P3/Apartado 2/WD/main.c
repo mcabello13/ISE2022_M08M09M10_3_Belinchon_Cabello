@@ -23,7 +23,7 @@ uint8_t estado = 0;
 static uint32_t cuenta;
 			
 //Rutina de atencion a la interrupcion del Timer 2:			
-/*void TIMER2_init (int mseg)			
+void TIMER2_init (int mseg)			
 { 		
 	LPC_SC->PCONP |= 1<<22; //Power Control para el reloj del Timer 2.
 	LPC_SC->PCLKSEL1 |= 1<<12;// Se habilita el reloj del Timer 2.
@@ -36,15 +36,15 @@ static uint32_t cuenta;
 	LPC_TIM2-> IR |=1; //Limpia flag.
 	LPC_TIM2->TCR &= 0; //Se deshabilita la cuenta del timer.
 	LPC_TIM2->TC= 0; //Contador del timer a cero.
-}*/
+}
 
 //Funcion que realiza un retardo de 3 segundos:
-void testeo(void)
+void delay_3s(void)
 {
-	int retardo = 3000;
+	int retardo = 25000; //40ns*25000 = 1ms ; CKL/4 = 25 MHz.
 	int i;
 	
-	for(i=0; i<retardo; i++)
+	for(i=0; i<retardo*3000; i++)
 	{
 		
 	}
@@ -139,23 +139,23 @@ int main (void)
 	
 	WDT_Feed(); //Se alimenta al Watchdog.
 	
-	//GPIO_PinWrite(PUERTO_LED, LED_1, 1);	
-	//TIMER2_init(4000);	
+	delay_3s(); //Antes de iniciar la aplicacion, realizamos el testeo durante tres segundos.
 	
-	testeo(); //Antes de iniciar la aplicacion, realizamos el testeo durante tres segundos.
+	GPIO_PinWrite(PUERTO_LED_RGB, LED_VERDE, 1);
+	GPIO_PinWrite(PUERTO_LED_RGB, LED_ROJO, 1);
 	
   while(1)
 	{		
 		WDT_Feed(); //Dentro del while(1) se alimenta continuamente al Watchdog para evitar que se active.
 		
-		//GPIO_PinWrite(PUERTO_LED, LED_1, 1);
-		//GPIO_PinWrite(PUERTO_LED, LED_2, 0);
+		GPIO_PinWrite(PUERTO_LED, LED_1, 1);
+		GPIO_PinWrite(PUERTO_LED, LED_2, 0);
 		
-		//TIMER2_init(500);
+		TIMER2_init(500);
 		
-		//GPIO_PinWrite(PUERTO_LED, LED_1, 0);
-		//GPIO_PinWrite(PUERTO_LED, LED_2, 1);
+		GPIO_PinWrite(PUERTO_LED, LED_1, 0);
+		GPIO_PinWrite(PUERTO_LED, LED_2, 1);
 		
-		//TIMER2_init(500); //APUNTE --> Colocar en esta linea un punto de ruptura para ver saltar el Watchdog.
+		TIMER2_init(500); //APUNTE --> Colocar en esta linea un punto de ruptura para ver saltar el Watchdog.
 	}			
 }
