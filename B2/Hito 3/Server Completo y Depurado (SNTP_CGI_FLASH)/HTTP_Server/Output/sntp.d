@@ -1,0 +1,12 @@
+.\output\sntp.o: sntp.c
+.\output\sntp.o: C:\Users\Castellana\Documents\ARM\CMSIS\5.5.1\CMSIS\RTOS\RTX\INC\cmsis_os.h
+.\output\sntp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\sntp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\sntp.o: C:\Users\Castellana\Documents\Keil\MDK-Middleware\7.13.0\Network_v6\Include\rl_net.h
+.\output\sntp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\output\sntp.o: .\RTE\_LPC1768_Flash\RTE_Components.h
+.\output\sntp.o: lcd.h
+.\output\sntp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+.\output\sntp.o: rtc.h
+.\output\sntp.o: sntp.h
+.\output\sntp.o: RTC.h

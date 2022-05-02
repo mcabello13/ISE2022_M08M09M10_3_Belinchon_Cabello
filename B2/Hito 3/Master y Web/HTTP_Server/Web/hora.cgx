@@ -1,0 +1,7 @@
+t <form>
+t <text>
+t <id>hora</id>
+c y<value>%s</value>
+t </text>
+t </form>
+.
